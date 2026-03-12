@@ -1,0 +1,177 @@
+{
+"info": {
+"name": "Backend APIs",
+"_postman_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+"description": "REST APIs for Users, Software Projects and DPR",
+"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+},
+"item": [
+{
+"name": "Auth - Register",
+"request": {
+"method": "POST",
+"header": [
+{ "key": "Content-Type", "value": "application/json" }
+],
+"body": {
+"mode": "raw",
+"raw": "{  \"name\": \"xyz\", \"email\": \"xyz@gmail.com\",  \"password\": \"1234\", \"role\": \"admin\"}"
+},
+"url": {
+"raw": "http://localhost:5000/auth/register",
+"protocol": "http",
+"host": ["localhost"],
+"port": "5000",
+"path": ["auth","register"]
+}
+}
+},
+{
+"name": "Auth - Login",
+"request": {
+"method": "POST",
+"header": [
+{ "key": "Content-Type", "value": "application/json" }
+],
+"body": {
+"mode": "raw",
+"raw": "{  \"email\": \"xyz@gmail.com\",  \"password\": \"1234\"}"
+},
+"url": {
+"raw": "http://localhost:5000/auth/login",
+"protocol": "http",
+"host": ["localhost"],
+"port": "5000",
+"path": ["auth","login"]
+}
+}
+},
+{
+"name": "Create Project",
+"request": {
+"method": "POST",
+"header": [
+{ "key": "Authorization", "value": "Bearer bearer-token" },
+{ "key": "Content-Type", "value": "application/json" }
+],
+"body": {
+"mode": "raw",
+"raw": "{\"name\": \"AI Task Manager\", \"description\": \"Project management SaaS\", \"start_date\": \"2026-03-01\", \"end_date\": \"2026-06-30\", \"status\": \"active\"  }"
+},
+"url": {
+"raw": "http://localhost:5000/projects",
+"protocol": "http",
+"host": ["localhost"],
+"port": "5000",
+"path": ["projects"]
+}
+}
+},
+{
+"name": "Get All Projects",
+"request": {
+"method": "GET",
+"header": [
+{ "key": "Authorization", "value": "Bearer bearer-token" }
+],
+"url": {
+"raw": "http://localhost:5000/projects",
+"protocol": "http",
+"host": ["localhost"],
+"port": "5000",
+"path": ["projects"]
+}
+}
+},
+{
+"name": "Get Project By ID",
+"request": {
+"method": "GET",
+"header": [
+{ "key": "Authorization", "value": "Bearer bearer-token" }
+],
+"url": {
+"raw": "http://localhost:5000/projects/1",
+"protocol": "http",
+"host": ["localhost"],
+"port": "5000",
+"path": ["projects","1"]
+}
+}
+},
+{
+"name": "Update Project",
+"request": {
+"method": "PUT",
+"header": [
+{ "key": "Authorization", "value": "Bearer bearer-token" },
+{ "key": "Content-Type", "value": "application/json" }
+],
+"body": {
+"mode": "raw",
+"raw": "{\"status\": \"completed\"}"
+},
+"url": {
+"raw": "http://localhost:5000/projects/1",
+"protocol": "http",
+"host": ["localhost"],
+"port": "5000",
+"path": ["projects","1"]
+}
+}
+},
+{
+"name": "Delete Project",
+"request": {
+"method": "DELETE",
+"header": [
+{ "key": "Authorization", "value": "Bearer bearer-token" }
+],
+"url": {
+"raw": "http://localhost:5000/projects/1",
+"protocol": "http",
+"host": ["localhost"],
+"port": "5000",
+"path": ["projects","1"]
+}
+}
+},
+{
+"name": "Create DPR",
+"request": {
+"method": "POST",
+"header": [
+{ "key": "Authorization", "value": "Bearer bearer-token" },
+{ "key": "Content-Type", "value": "application/json" }
+],
+"body": {
+"mode": "raw",
+"raw": "{\"date\" : \"2026-03-12\",\"work_description\": \"Implemented authentication module\", \"weather\": \"Remote Work\",\"worker_count\": 4}"
+},
+"url": {
+"raw": "http://localhost:5000/projects/1/dpr",
+"protocol": "http",
+"host": ["localhost"],
+"port": "5000",
+"path": ["projects","1","dpr"]
+}
+}
+},
+{
+"name": "Get DPRs",
+"request": {
+"method": "GET",
+"header": [
+{ "key": "Authorization", "value": "Bearer bearer-token" }
+],
+"url": {
+"raw": "http://localhost:5000/projects/1/dpr",
+"protocol": "http",
+"host": ["localhost"],
+"port": "5000",
+"path": ["projects","1","dpr"]
+}
+}
+}
+]
+}
